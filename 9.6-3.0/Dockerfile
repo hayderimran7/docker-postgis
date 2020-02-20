@@ -12,7 +12,5 @@ RUN apt-get update \
            postgresql-$PG_MAJOR-postgis-$POSTGIS_MAJOR-scripts=$POSTGIS_VERSION \
       && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /docker-entrypoint-initdb.d
-#COPY ./initdb-postgis.sh /docker-entrypoint-initdb.d/postgis.sh
-#COPY ./update-postgis.sh /usr/local/bin
+
 
