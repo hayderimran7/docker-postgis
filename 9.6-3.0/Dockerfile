@@ -1,6 +1,6 @@
 FROM postgres:9.6
 
-LABEL maintainer="PostGIS Project - https://postgis.net"
+LABEL maintainer="Imran Malik"
 
 ENV POSTGIS_MAJOR 3
 ENV POSTGIS_VERSION 3.0.0+dfsg-2~exp1.pgdg90+1
