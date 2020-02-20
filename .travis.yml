@@ -7,12 +7,11 @@ dist: xenial
 env:
   - VERSION=9.6-3.0 VARIANT=alpine
 
-install:
-  - git clone https://github.com/docker-library/official-images.git ~/official-images
-
 before_script:
   - env | grep -E "VARIANT|VERSION" | sort
   - cd "$VERSION/$VARIANT"
+  - ls
+  - cat Dockerfile
   - image="hayderimran7/postgis:$VERSION${VARIANT:+-${VARIANT}}"
 
 script:
