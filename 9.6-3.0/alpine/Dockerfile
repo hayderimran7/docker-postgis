@@ -1,6 +1,6 @@
 FROM postgres:9.6-alpine
 
-LABEL maintainer="PostGIS Project - https://postgis.net"
+LABEL maintainer="Imran Malik"
 
 ENV POSTGIS_VERSION 3.0.0
 ENV POSTGIS_SHA256 1c83fb2fc8870d36ed49859c49a12c8c4c8ae8c5c3f912a21a951c5bcc249123
@@ -8,6 +8,7 @@ ENV POSTGIS_SHA256 1c83fb2fc8870d36ed49859c49a12c8c4c8ae8c5c3f912a21a951c5bcc249
 RUN set -ex \
     \
     && apk add --no-cache --virtual .fetch-deps \
+        bash \
         ca-certificates \
         openssl \
         tar \
@@ -58,5 +59,5 @@ RUN set -ex \
     && rm -rf /usr/src/postgis \
     && apk del .fetch-deps .build-deps
 
-COPY ./initdb-postgis.sh /docker-entrypoint-initdb.d/postgis.sh
-COPY ./update-postgis.sh /usr/local/bin
+#COPY ./initdb-postgis.sh /docker-entrypoint-initdb.d/postgis.sh
+#COPY ./update-postgis.sh /usr/local/bin
