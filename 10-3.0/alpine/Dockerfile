@@ -58,5 +58,5 @@ RUN set -ex \
     && rm -rf /usr/src/postgis \
     && apk del .fetch-deps .build-deps
 
-COPY ./initdb-postgis.sh /docker-entrypoint-initdb.d/postgis.sh
-COPY ./update-postgis.sh /usr/local/bin
+#COPY ./initdb-postgis.sh /docker-entrypoint-initdb.d/postgis.sh
+#COPY ./update-postgis.sh /usr/local/bin
